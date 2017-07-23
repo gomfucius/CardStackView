@@ -27,8 +27,12 @@ open class CardStackView: UIView {
 
     // MARK: - Init
 
-    init(cards: [UIView], showsPagination: Bool = true, maxAngle: Int = 10) {
+    public init(cards: [UIView], showsPagination: Bool = true, maxAngle: Int = 10) {
         super.init(frame: CGRect.zero)
+
+        if cards.count == 0 {
+            return
+        }
 
         if showsPagination {
             addPagination(withCount: cards.count)
