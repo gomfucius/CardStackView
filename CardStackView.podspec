@@ -36,7 +36,7 @@ CardStackView takes in an array of UIViews which you can swipe right to send it 
   #   'CardStackView' => ['CardStackView/Assets/*.png']
   # }
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
