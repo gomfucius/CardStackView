@@ -24,7 +24,7 @@ class CardStackViewSpec: QuickSpec {
 
             context("if array of UIViews have values and pagination is false") {
                 let cardStackView = CardStackView(cards: [UIView(), UIView()], showsPagination: false)
-                it("should have pagination view") {
+                it("should not have pagination view") {
                     expect(cardStackView.paginationView).to(beNil())
                 }
             }

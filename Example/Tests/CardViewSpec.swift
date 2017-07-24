@@ -10,7 +10,7 @@ class CardViewSpec: QuickSpec {
     override func spec() {
         describe("init") {
             let cardView = CardView(view: UIView(frame: CGRect(x: 10.0, y: 10.0, width: 10.0, height: 10.0)), angle: 10.0)
-            it("it should not have originalBounds yet") {
+            it("should not have originalBounds yet") {
                 expect(cardView.originalBounds).to(beNil())
                 expect(cardView.originalCenter).to(beNil())
             }
@@ -34,14 +34,14 @@ class CardViewSpec: QuickSpec {
             }
 
             context("layoutSubviews") {
-                it("it should have originalBounds") {
+                it("should have originalBounds") {
                     expect(cardView.originalBounds) != CGRect.zero
                     expect(cardView.originalCenter) != CGPoint.zero
                 }
             }
 
             context("resetPositionAndRotation") {
-                it("it should go back to original point") {
+                it("should eventually go back to original point") {
                     let newCenter = CGPoint(x: 1.0, y: 1.0)
                     expect(cardView.center).notTo(equal(newCenter))
                     cardView.center = newCenter
