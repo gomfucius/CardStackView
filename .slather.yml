@@ -1,8 +1,9 @@
-ci_service: travis_pro
+ci_service: travis_ci
 ci_access_token: n6BtKpCveOrlYeoRz4eAM0XG3g0j6ZQAO
 coverage_service: coveralls
-xcodeproj: Example/CardStackView.xcodeproj
 source_directory: CardStackView
+workspace: Example/CardStackView.xcworkspace
+scheme: CardStackView_Example
 ignore:
   - ProjectTests/*
   - Pods/*
