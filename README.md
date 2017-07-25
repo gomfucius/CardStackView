@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
 [![License](https://img.shields.io/cocoapods/l/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
 [![Platform](https://img.shields.io/cocoapods/p/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
+[![Coverage Status](https://coveralls.io/repos/github/gomfucius/CardStackView/badge.svg?branch=master)](https://coveralls.io/github/gomfucius/CardStackView?branch=master)
 
 ![Alt text](/Example/example.gif?raw=true "CardStackView example gif")
 
