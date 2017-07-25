@@ -84,7 +84,7 @@ open class CardStackView: UIView {
 
     func swipeCard(_ card: CardView, direction: CardView.Direction, velocity: CGPoint) {
         // Throw card off the screen
-        UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: {
             let screenWidth = UIScreen.main.bounds.width
             let directionMultiplier: CGFloat = direction == .left ? -1 : 1
             card.center = CGPoint(x: directionMultiplier * (screenWidth + card.bounds.width / 2), y: card.center.y + (velocity.y - card.center.y) / 4)
@@ -102,7 +102,7 @@ open class CardStackView: UIView {
                 self.sendSubview(toBack: paginationView)
             }
 
-            UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5.0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5.0, options: .curveEaseIn, animations: {
                 card.center = self.convert(card.center, to: card)
                 card.resetPositionAndRotation(withElasticity: false)
             }, completion: { _ in
