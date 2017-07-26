@@ -21,18 +21,21 @@ open class CardStackView: UIView {
     var beganPoint: CGPoint?
     var currentCard: CardView?
     var paginationView: PaginationView?
+    var throwDuration: TimeInterval!
 
     /// Used to protected from swiping while the first card is out of the screen which causes weird animation issues
     var panEnabled = true
 
     // MARK: - Init
 
-    public init(cards: [UIView], showsPagination: Bool = true, maxAngle: Int = 10) {
+    public init(cards: [UIView], showsPagination: Bool = true, maxAngle: Int = 10, randomAngle: Bool = true, throwDuration: TimeInterval = 0.3) {
         super.init(frame: CGRect.zero)
 
         if cards.count == 0 {
             return
         }
+
+        self.throwDuration = throwDuration
 
         if showsPagination {
             addPagination(withCount: cards.count)
@@ -41,7 +44,11 @@ open class CardStackView: UIView {
         // Add views
         for index in 0...cards.count - 1 {
             let i = cards.count / 2 - index
-            let cardView = CardView(view: cards[index], angle: CGFloat((i * 2) % maxAngle))
+
+            let randomInt = Int(arc4random_uniform(UInt32(maxAngle)))
+            let stuff = -1 * maxAngle / 2 + randomInt
+            let angle = randomAngle ? CGFloat(stuff) : CGFloat((i * 2) % maxAngle)
+            let cardView = CardView(view: cards[index], angle: angle)
             cardViews.append(cardView)
             self.addSubview(cardView)
 
@@ -84,11 +91,11 @@ open class CardStackView: UIView {
 
     func swipeCard(_ card: CardView, direction: CardView.Direction, velocity: CGPoint) {
         // Throw card off the screen
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: throwDuration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: {
             let screenWidth = UIScreen.main.bounds.width
             let directionMultiplier: CGFloat = direction == .left ? -1 : 1
-            card.center = CGPoint(x: directionMultiplier * (screenWidth + card.bounds.width / 2), y: card.center.y + (velocity.y - card.center.y) / 4)
-        }) { completion in
+            card.center = CGPoint(x: directionMultiplier * (screenWidth + card.bounds.width / 2), y: card.center.y + (velocity.y - card.center.y) / 6)
+        }) { _ in
             // Snap back the card back to center
             self.panEnabled = true
 
@@ -102,7 +109,7 @@ open class CardStackView: UIView {
                 self.sendSubview(toBack: paginationView)
             }
 
-            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5.0, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: self.throwDuration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: {
                 card.center = self.convert(card.center, to: card)
                 card.resetPositionAndRotation(withElasticity: false)
             }, completion: { _ in

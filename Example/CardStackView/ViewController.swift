@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 
         cardViews.reverse()
 
-        let cardStackView = CardStackView(cards: cardViews)
+        let cardStackView = CardStackView(cards: cardViews, showsPagination: true, maxAngle: 10, randomAngle: true, throwDuration: 0.4)
         cardStackView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(cardStackView)
         let views = ["cardStackView": cardStackView]
