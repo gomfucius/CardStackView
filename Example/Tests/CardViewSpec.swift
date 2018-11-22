@@ -28,8 +28,8 @@ class CardViewSpec: QuickSpec {
                 parentView.addSubview(stackView)
                 stackView.translatesAutoresizingMaskIntoConstraints = false
                 let views: [String: UIView] = ["stackView": stackView]
-                NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|[stackView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-                NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+                NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|[stackView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
+                NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
                 parentView.layoutIfNeeded()
             }
 

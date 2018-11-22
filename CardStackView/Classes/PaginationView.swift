@@ -54,8 +54,8 @@ open class PaginationView: UIView {
             let sizeAndSpacing = Constants.dotSize + Constants.dotSpacing
             NSLayoutConstraint(item: dot, attribute: .centerX, relatedBy: .equal, toItem: dot.superview, attribute: .centerX, multiplier: 1.0, constant: sizeAndSpacing * positionX).isActive = true
             NSLayoutConstraint(item: dot, attribute: .centerY, relatedBy: .equal, toItem: dot.superview, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
-            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "[dot(dotSize)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
-            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[dot(dotSize)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "[dot(dotSize)]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
+            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[dot(dotSize)]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
             dots.append(dot)
         }
     }

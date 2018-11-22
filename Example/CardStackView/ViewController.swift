@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         self.view.addSubview(cardStackView)
         let views = ["cardStackView": cardStackView]
 
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|-80-[cardStackView]-80-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-100-[cardStackView]-100-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|-80-[cardStackView]-80-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-100-[cardStackView]-100-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
     }
 }

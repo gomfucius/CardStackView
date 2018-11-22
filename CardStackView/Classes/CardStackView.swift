@@ -57,8 +57,8 @@ open class CardStackView: UIView {
             let views = ["cardView": cardView]
             let paginationBottomMargin = showsPagination ? 30 : 0
             let metrics = ["paginationBottomMargin": paginationBottomMargin]
-            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|[cardView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
-            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[cardView]-(paginationBottomMargin)-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|[cardView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
+            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[cardView]-(paginationBottomMargin)-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: views))
         }
 
         // Add pan gestures
@@ -85,8 +85,8 @@ open class CardStackView: UIView {
         self.addSubview(paginationView)
         paginationView.translatesAutoresizingMaskIntoConstraints = false
         let views = ["paginationView": paginationView]
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|[paginationView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[paginationView(10)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|[paginationView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[paginationView(10)]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
     }
 
     func swipeCard(_ card: CardView, direction: CardView.Direction, velocity: CGPoint) {
@@ -100,13 +100,13 @@ open class CardStackView: UIView {
             self.panEnabled = true
 
             if direction == .left {
-                self.bringSubview(toFront: card)
+                self.bringSubviewToFront(card)
             } else {
-                self.sendSubview(toBack: card)
+                self.sendSubviewToBack(card)
             }
 
             if let paginationView = self.paginationView {
-                self.sendSubview(toBack: paginationView)
+                self.sendSubviewToBack(paginationView)
             }
 
             UIView.animate(withDuration: self.throwDuration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5.0, options: .curveEaseOut, animations: {
@@ -127,7 +127,7 @@ open class CardStackView: UIView {
 
 extension CardStackView: UIGestureRecognizerDelegate {
 
-    func handlePanGesture(gesture: UIPanGestureRecognizer) {
+    @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
         if !panEnabled {
             return
         }
@@ -183,7 +183,7 @@ extension CardStackView: UIGestureRecognizerDelegate {
                     return
                 }
                 let boxLocation = gesture.location(in: currentCard)
-                currentOffest = UIOffsetMake(boxLocation.x - currentCard.bounds.midX, boxLocation.y - currentCard.bounds.midY)
+                currentOffest = UIOffset(horizontal: boxLocation.x - currentCard.bounds.midX, vertical: boxLocation.y - currentCard.bounds.midY)
                 UIView.animate(withDuration: 0.1) {
                     // Rotate card back to straight
                     currentCard.transform = .identity

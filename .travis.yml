@@ -2,17 +2,20 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode8.3
+osx_image: xcode10.1
 language: swift
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
+- cd Example
+- pod repo update
+- pod install
+- cd ..
 - gem install slather --no-rdoc --no-ri --no-document --quiet
-- pod install --project-directory=Example
 script:
 - xcodebuild -workspace  Example/CardStackView.xcworkspace -list
-- set -o pipefail && xcodebuild test -workspace Example/CardStackView.xcworkspace -scheme CardStackView_Example -sdk iphonesimulator10.3 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3.1' | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/CardStackView.xcworkspace -scheme CardStackView_Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' | xcpretty
 - pod lib lint
 after_success:
   - cd $TRAVIS_BUILD_DIR && slather

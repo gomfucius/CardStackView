@@ -1,6 +1,7 @@
 
 # 🎴 CardStackView 
 
+[![Swift](https://img.shields.io/badge/swift-4.2-brightgreen.svg?style=flat)](https://swift.org)
 [![CI Status](http://img.shields.io/travis/gomfucius/CardStackView.svg?style=flat)](https://travis-ci.org/gomfucius/CardStackView)
 [![Version](https://img.shields.io/cocoapods/v/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
 [![License](https://img.shields.io/cocoapods/l/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)

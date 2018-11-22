@@ -28,10 +28,10 @@ CardStackView takes in an array of UIViews which you can swipe right to send it 
   s.source           = { :git => 'https://github.com/gomfucius/CardStackView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
-
+  s.ios.deployment_target = '11.4'
+  s.swift_version = '4.2'
   s.source_files = 'CardStackView/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'CardStackView' => ['CardStackView/Assets/*.png']
   # }
