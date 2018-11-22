@@ -1,8 +1,9 @@
 
-# 🎴 CardStackView 
+# 🎴 CardStackView
 
 [![Swift](https://img.shields.io/badge/swift-4.2-brightgreen.svg?style=flat)](https://swift.org)
 [![CI Status](http://img.shields.io/travis/gomfucius/CardStackView.svg?style=flat)](https://travis-ci.org/gomfucius/CardStackView)
+[![Carthage](https://img.shields.io/badge/Carthage-✔-f2a77e.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
 [![License](https://img.shields.io/cocoapods/l/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
 [![Platform](https://img.shields.io/cocoapods/p/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
@@ -16,8 +17,15 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## 🖥 Installation
 
-CardStackView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+CardStackView is available through [Carthage](https://github.com/Carthage/Carthage) and [CocoaPods](https://cocoapods.org).
+
+### Carthage
+
+github "gomfucius/CardStackView" == 0.2.1
+
+### Cocoapods
+
+To install, simply add the following line to your Podfile:
 
 ```ruby
 pod "CardStackView"
