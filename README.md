@@ -41,11 +41,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var views = [MyCustomView]()
+        var cardViews = [MyCustomView]()
 
         for index in 0...6 {
             var view = MyCustomView()
-            views.append(view)
+            cardViews.append(view)
         }
 
         let cardStackView = CardStackView(cards: cardViews)
