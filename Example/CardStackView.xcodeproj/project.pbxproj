@@ -15,6 +15,9 @@
 		41E8A27825563678009DF7C9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27425563678009DF7C9 /* CardView.swift */; };
 		41E8A27925563678009DF7C9 /* PaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27525563678009DF7C9 /* PaginationView.swift */; };
 		41E8A27B25563678009DF7C9 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27725563678009DF7C9 /* CardStackView.swift */; };
+		41E8A28025564585009DF7C9 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27725563678009DF7C9 /* CardStackView.swift */; };
+		41E8A2832556458A009DF7C9 /* PaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27525563678009DF7C9 /* PaginationView.swift */; };
+		41E8A2862556458C009DF7C9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27425563678009DF7C9 /* CardView.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -275,7 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				373FBCBB1F2525670017BBDC /* CardViewSpec.swift in Sources */,
+				41E8A28025564585009DF7C9 /* CardStackView.swift in Sources */,
 				373FBCB71F251D080017BBDC /* CardStackViewSpec.swift in Sources */,
+				41E8A2832556458A009DF7C9 /* PaginationView.swift in Sources */,
+				41E8A2862556458C009DF7C9 /* CardView.swift in Sources */,
 				373FBCB91F2523890017BBDC /* PaginationViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
