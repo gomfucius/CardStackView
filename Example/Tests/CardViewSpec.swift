@@ -3,7 +3,6 @@
 import Quick
 import Nimble
 import UIKit
-@testable import CardStackView
 
 class CardViewSpec: QuickSpec {
 

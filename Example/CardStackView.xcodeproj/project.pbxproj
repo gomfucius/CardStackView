@@ -10,10 +10,14 @@
 		373FBCB71F251D080017BBDC /* CardStackViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FBCB61F251D080017BBDC /* CardStackViewSpec.swift */; };
 		373FBCB91F2523890017BBDC /* PaginationViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FBCB81F2523890017BBDC /* PaginationViewSpec.swift */; };
 		373FBCBB1F2525670017BBDC /* CardViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373FBCBA1F2525670017BBDC /* CardViewSpec.swift */; };
-		416F5ABF254E6E0300F10FCD /* CardStackView in Frameworks */ = {isa = PBXBuildFile; productRef = 416F5ABE254E6E0300F10FCD /* CardStackView */; };
 		41E8A259255623EC009DF7C9 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41E8A258255623EC009DF7C9 /* Quick */; };
 		41E8A25D255623F5009DF7C9 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 41E8A25C255623F5009DF7C9 /* Nimble */; };
-		41E8A26325562585009DF7C9 /* CardStackView in Frameworks */ = {isa = PBXBuildFile; productRef = 41E8A26225562585009DF7C9 /* CardStackView */; };
+		41E8A27825563678009DF7C9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27425563678009DF7C9 /* CardView.swift */; };
+		41E8A27925563678009DF7C9 /* PaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27525563678009DF7C9 /* PaginationView.swift */; };
+		41E8A27B25563678009DF7C9 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27725563678009DF7C9 /* CardStackView.swift */; };
+		41E8A28025564585009DF7C9 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27725563678009DF7C9 /* CardStackView.swift */; };
+		41E8A2832556458A009DF7C9 /* PaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27525563678009DF7C9 /* PaginationView.swift */; };
+		41E8A2862556458C009DF7C9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8A27425563678009DF7C9 /* CardView.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -35,6 +39,9 @@
 		373FBCB61F251D080017BBDC /* CardStackViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackViewSpec.swift; sourceTree = "<group>"; };
 		373FBCB81F2523890017BBDC /* PaginationViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationViewSpec.swift; sourceTree = "<group>"; };
 		373FBCBA1F2525670017BBDC /* CardViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewSpec.swift; sourceTree = "<group>"; };
+		41E8A27425563678009DF7C9 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		41E8A27525563678009DF7C9 /* PaginationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationView.swift; sourceTree = "<group>"; };
+		41E8A27725563678009DF7C9 /* CardStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CardStackView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardStackView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				416F5ABF254E6E0300F10FCD /* CardStackView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E8A26325562585009DF7C9 /* CardStackView in Frameworks */,
 				41E8A259255623EC009DF7C9 /* Quick in Frameworks */,
 				41E8A25D255623F5009DF7C9 /* Nimble in Frameworks */,
 			);
@@ -75,9 +80,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		41E8A27325563678009DF7C9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				41E8A27425563678009DF7C9 /* CardView.swift */,
+				41E8A27525563678009DF7C9 /* PaginationView.swift */,
+				41E8A27725563678009DF7C9 /* CardStackView.swift */,
+			);
+			name = Classes;
+			path = ../CardStackView/Classes;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				41E8A27325563678009DF7C9 /* Classes */,
 				607FACD21AFB9204008FA782 /* Example for CardStackView */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -152,7 +169,6 @@
 			);
 			name = CardStackView_Example;
 			packageProductDependencies = (
-				416F5ABE254E6E0300F10FCD /* CardStackView */,
 			);
 			productName = CardStackView;
 			productReference = 607FACD01AFB9204008FA782 /* CardStackView_Example.app */;
@@ -175,7 +191,6 @@
 			packageProductDependencies = (
 				41E8A258255623EC009DF7C9 /* Quick */,
 				41E8A25C255623F5009DF7C9 /* Nimble */,
-				41E8A26225562585009DF7C9 /* CardStackView */,
 			);
 			productName = Tests;
 			productReference = 607FACE51AFB9204008FA782 /* CardStackView_Tests.xctest */;
@@ -212,7 +227,6 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
-				416F5ABD254E6E0300F10FCD /* XCRemoteSwiftPackageReference "CardStackView" */,
 				4155ECDC254E6F5F00DBDB09 /* XCRemoteSwiftPackageReference "Nimble" */,
 				4155ECDF254E6FFB00DBDB09 /* XCRemoteSwiftPackageReference "Quick" */,
 			);
@@ -251,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E8A27B25563678009DF7C9 /* CardStackView.swift in Sources */,
+				41E8A27925563678009DF7C9 /* PaginationView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				41E8A27825563678009DF7C9 /* CardView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				373FBCBB1F2525670017BBDC /* CardViewSpec.swift in Sources */,
+				41E8A28025564585009DF7C9 /* CardStackView.swift in Sources */,
 				373FBCB71F251D080017BBDC /* CardStackViewSpec.swift in Sources */,
+				41E8A2832556458A009DF7C9 /* PaginationView.swift in Sources */,
+				41E8A2862556458C009DF7C9 /* CardView.swift in Sources */,
 				373FBCB91F2523890017BBDC /* PaginationViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,22 +560,9 @@
 				version = 3.0.0;
 			};
 		};
-		416F5ABD254E6E0300F10FCD /* XCRemoteSwiftPackageReference "CardStackView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gomfucius/CardStackView";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		416F5ABE254E6E0300F10FCD /* CardStackView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 416F5ABD254E6E0300F10FCD /* XCRemoteSwiftPackageReference "CardStackView" */;
-			productName = CardStackView;
-		};
 		41E8A258255623EC009DF7C9 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4155ECDF254E6FFB00DBDB09 /* XCRemoteSwiftPackageReference "Quick" */;
@@ -565,11 +572,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4155ECDC254E6F5F00DBDB09 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
-		};
-		41E8A26225562585009DF7C9 /* CardStackView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 416F5ABD254E6E0300F10FCD /* XCRemoteSwiftPackageReference "CardStackView" */;
-			productName = CardStackView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CardStackView
 
 class ViewController: UIViewController {
 
@@ -46,10 +45,21 @@ class ViewController: UIViewController {
 
         let cardStackView = CardStackView(cards: cardViews, showsPagination: true, maxAngle: 10, randomAngle: true, throwDuration: 0.4)
         cardStackView.translatesAutoresizingMaskIntoConstraints = false
+        cardStackView.delegate = self
         self.view.addSubview(cardStackView)
         let views = ["cardStackView": cardStackView]
 
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|-80-[cardStackView]-80-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-100-[cardStackView]-100-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
     }
+}
+
+// MARK: - CardStackViewDelegate
+
+extension ViewController: CardStackViewDelegate {
+    
+    func cardStackViewDidChangePage(_ cardStackView: CardStackView) {
+        print("Current index: \(cardStackView.currentIndex)")
+    }
+    
 }
