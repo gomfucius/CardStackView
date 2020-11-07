@@ -1,5 +1,6 @@
 // https://github.com/Quick/Quick
 
+import UIKit
 import Quick
 import Nimble
 @testable import CardStackView
