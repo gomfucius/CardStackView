@@ -1,0 +1,29 @@
+name: test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=14.0,name=iPhone 11']
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: xcode-select -switch /Applications/Xcode_12.app
+      run: |
+        xcode-select -print-path
+        sudo xcode-select -switch /Applications/Xcode_12.app
+        xcode-select -print-path
+    - name: xcrun simctl list
+      run: |
+        xcrun simctl list
+    - name: Build and run test
+      run: |
+        cd Example
+        set -o pipefail
+        xcodebuild clean test -project CardStackView.xcodeproj -scheme CardStackView_Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.0' | xcpretty
+      env:
+         destination: ${{ matrix.destination }}
