@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
+protocol CardStackViewDelegate: class {
+    func cardStackViewDidChangePage(_ cardStackView: CardStackView)
+}
+
 open class CardStackView: UIView {
 
     class Constants {
         static let throwingThreshold: Float = 500.0
     }
+    
+    weak var delegate: CardStackViewDelegate?
 
     var cardViews = [CardView]()
     var panGesture: UIPanGestureRecognizer!
@@ -25,6 +31,8 @@ open class CardStackView: UIView {
 
     /// Used to protected from swiping while the first card is out of the screen which causes weird animation issues
     var panEnabled = true
+    
+    private(set) var currentIndex: Int = 0
 
     // MARK: - Init
 
@@ -101,8 +109,16 @@ open class CardStackView: UIView {
 
             if direction == .left {
                 self.bringSubviewToFront(card)
+                self.currentIndex -= 1
             } else {
                 self.sendSubviewToBack(card)
+                self.currentIndex += 1
+            }
+
+            if self.currentIndex < 0 {
+                self.currentIndex = self.cardViews.count - 1
+            } else if self.currentIndex >= self.cardViews.count {
+                self.currentIndex = 0
             }
 
             if let paginationView = self.paginationView {
@@ -115,6 +131,8 @@ open class CardStackView: UIView {
             }, completion: { _ in
                 self.didFinishSwipingCardTo(direction: direction)
             })
+            
+            self.delegate?.cardStackViewDidChangePage(self)
         }
     }
 

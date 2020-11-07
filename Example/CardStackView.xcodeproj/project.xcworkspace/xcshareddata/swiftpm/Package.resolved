@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "CardStackView",
-        "repositoryURL": "https://github.com/gomfucius/CardStackView",
-        "state": {
-          "branch": null,
-          "revision": "157bc3176a06257bbf83ed1b9fa3dc6a670e1576",
-          "version": "1.0.1"
-        }
-      },
-      {
         "package": "CwlCatchException",
         "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
         "state": {
