@@ -2,7 +2,7 @@
 # 🎴 CardStackView
 
 [![Swift](https://img.shields.io/badge/swift-5.0-brightgreen.svg?style=flat)](https://swift.org)
-[![CI Status](http://img.shields.io/travis/gomfucius/CardStackView.svg?style=flat)](https://travis-ci.org/gomfucius/CardStackView)
+[![UnitTest Actions Status](https://github.com/gomfucius/CardStackView/workflows/test/badge.svg)](https://github.com/gomfucius/CardStackView/actions)
 [![Carthage](https://img.shields.io/badge/Carthage-✔-f2a77e.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
 [![License](https://img.shields.io/cocoapods/l/CardStackView.svg?style=flat)](http://cocoapods.org/pods/CardStackView)
