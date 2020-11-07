@@ -13,7 +13,7 @@
 
 ## 😃 Example Project
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, open Example/CardStackView.xcodeproj, then build and run the CardStackView_Example target.
 
 ## 🖥 Installation
 
